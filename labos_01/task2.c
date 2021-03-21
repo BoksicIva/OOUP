@@ -11,9 +11,9 @@ typedef double (*PTRFUN)();
  * class Unary_Function
  **/
 struct Unary_Function{
+  struct UnaryfuncTable* funcTable;
   int lower_bound;
   int upper_bound;
-  struct UnaryfuncTable* funcTable;
 };
 
 struct  UnaryfuncTable {
@@ -26,8 +26,10 @@ void tabulate(struct Unary_Function* uf) {
         printf("f(%d)=%lf\n", x, uf->funcTable->value_at(uf,(double)x));
       }
 }
+
 double value_at(double x){
-  return 0;
+  printf("Call of virtual function");
+  exit(0);
 }
 
 
@@ -64,9 +66,9 @@ struct Unary_Function* createUnaryFunction(int lower_bound,int upper_bound){
  * class Square
  **/
 struct Square{
+  struct  UnaryfuncTable* funcTable;
   int lower_bound;
   int upper_bound;
-  struct  UnaryfuncTable* funcTable;
 };
 
 double SquareValue_at(struct Square* square, double x){
@@ -77,7 +79,6 @@ struct  UnaryfuncTable squareFuncTable={(double (*)(struct Square*,double))Squar
                                         (double (*)(struct Square*,double))negative_value_at};
 
 
-//struct UnaryFuncTable* SquareFuncTable = {SquareValue_at ,negative_value_at};
 
 struct Square* constructSquare(struct Square* square,int lower_bound,int upper_bound){
     constructUnaryFunction(square,lower_bound,upper_bound);
@@ -95,9 +96,9 @@ struct Square* createSquare(int lower_bound,int upper_bound){
  * class Linear
  **/
 struct Linear{
+   struct  UnaryfuncTable* funcTable;
    int lower_bound;
    int upper_bound;
-   struct  UnaryfuncTable* funcTable;
    double a;
    double b;
 };
