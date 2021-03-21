@@ -27,14 +27,12 @@ ali na način da u kodu ne navodimo simbolička imena prva i druga. Zadatak rije
 kakve smo koristili i do sada. Nemojte koristiti pokazivače na članske funkcije jer bi u tom slučaju vježba bila manje poučna. */
 
  void function(B* pb){
-    unsigned int virtualTableAddress = *(unsigned int*)pb;
+    unsigned long long virtualTableAddress = *(unsigned long long*)pb;
     
-    prvaFun printFun = (prvaFun)(*(unsigned int*)virtualTableAddress);
-
+    prvaFun printFun = (prvaFun)(*(unsigned long long*)virtualTableAddress);
     cout<<printFun(pb)<<endl;
 
-    drugaFun printFun2 = (drugaFun)(*(printFun+16));//(drugaFun)(*(unsigned int*)virtualTableAddress+4);
-
+    drugaFun printFun2 = (drugaFun)(*(unsigned long long*)(virtualTableAddress+8));
     cout<<printFun2(pb,5)<<endl;
  }
 
