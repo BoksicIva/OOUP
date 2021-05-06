@@ -27,7 +27,7 @@ private:
 
 
 int main(){
-  PlainOldClass poc;
+  PlainOldClass poc; 
   Base* pb=new CoolClass;
   poc.set(42);
   pb->set(42);

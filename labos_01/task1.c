@@ -96,10 +96,6 @@ void testAnimals(void){
   free(p3);
 }
 
-// void createNDogs(int n){
-//   for(int i=0;i<n;i++)
-//     createDog(name?);
-// }
 
 int main(void){
 testAnimals();
@@ -119,19 +115,23 @@ return 0;
   Polonije voli kuhanu govedinu
   */
 
-
+// TEKST ZADATKA
 
  /*Potrebno je oblikovati sljedeće elemente rješenja.
-Dvije tablice pokazivača na funkcije koje definiraju ponašanje konkretnih tipova, kao i kôd za njihovo incijaliziranje. 
+-Dvije tablice pokazivača na funkcije koje definiraju ponašanje konkretnih tipova, kao i kôd za njihovo incijaliziranje. 
 Prikladna deklaracija podatkovnog tipa za pohranjivanje elemenata tih dviju tablica bila bi: typedef char const* (*PTRFUN)();
-Podatkovni tip struct Animal koji sadrži i) pokazivač na ime ljubimca te ii) pokazivač na tablicu funkcija (vidi gore) 
+
+-Podatkovni tip struct Animal koji sadrži i) pokazivač na ime ljubimca te ii) pokazivač na tablicu funkcija (vidi gore) 
 koja definira ponašanje odgovarajućeg konkretnog tipa. Uputa: tablicu pokazivača mogli bismo i umetnuti u tip Animal ali obično preferiramo 
 rješenje s pokazivačem kako bismo što više smanjili memorijski otisak polimorfnih objekata.
-Funkcije animalPrintGreeting i animalPrintMenu koje generiraju specificirani ispis pozivanjem odgovarajućeg elementa tablice funkcija zadanog polimorfnog objekta.
-Funkcije constructDog i constructCat koje primaju i) pokazivač na memorijski prostor u kojem treba stvoriti objekt te 
+
+-Funkcije animalPrintGreeting i animalPrintMenu koje generiraju specificirani ispis pozivanjem odgovarajućeg elementa tablice funkcija zadanog polimorfnog objekta.
+
+-Funkcije constructDog i constructCat koje primaju i) pokazivač na memorijski prostor u kojem treba stvoriti objekt te 
 ii) pokazivač na znakovni niz s imenom ljubimca. Funkcije trebaju u zadanom memorijskom prostoru inicijalizirati objekt odgovarajućeg konkretnog tipa.
-Funkcije createDog i createCat koje alociraju memoriju i pozivaju funkcije constructDog odnosno constructCat.
-Uputa: nemojte komplicirati, službeno rješenje ima manje od 70 redaka uredno formatiranog C-a.
+
+-Funkcije createDog i createCat koje alociraju memoriju i pozivaju funkcije constructDog odnosno constructCat.
+
 Obratite pažnju na to da deklaracija PTRFUN pfun; u C-u (ali ne i C++-u!) definira pokazivač na
  funkciju s nespecificiranim argumentima. To znači da pfun može pokazivati na bilo koju funkciju koja vraća char const* (detalji).
   Naravno, pri korištenju pokazivača pfun moramo paziti da broj i tipovi argumenata navedeni u pozivu odgovaraju argumentima funkcije na 
@@ -146,9 +146,6 @@ Napišite funkciju za stvaranje n pasa, gdje je n argument funkcije (npr. za pot
 Pokažite kako bismo to ostvarili jednim pozivom funkcije malloc i potrebnim brojem poziva funkcije constructDog.
 Nakon rješavanja zadatka, uspostavite vezu s terminologijom iz objektno orijentiranih jezika. Koji elementi vašeg 
 rješenja bi korespondirali s podatkovnim članovima objekta, metodama, virtualnim metodama, konstruktorima, te virtualnim tablicama?
-
-Ako vas je objektno orijentirano programiranje u C-u očaralo i želite o tome znati više - pogledajte sljedeću knjigu.
- Međutim, prije nego što donesete definitivnu odluku o prelasku s C++-a na C, preporučamo vam da ipak razmislite o iznimkama, predlošcima,
-  STL-u i novim mogućnostima koje nude standardi iz 2011. i 2014. godine.*/
+*/
 }
 

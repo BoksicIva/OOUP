@@ -32,4 +32,9 @@ int main(){
   Derived* pd=new Derived();
   pd->metoda();
   return 0;
+  /*
+  Metoda kaze: ja sam bazna implementacija!
+  Metoda kaze: ja sam izvedena implementacija!
+  Metoda kaze: ja sam izvedena implementacija!
+*/
 }
