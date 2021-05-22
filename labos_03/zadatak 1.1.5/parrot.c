@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef char const* (*PTRFUN)();
+
+struct Parrot{
+    PTRFUN *vtable;
+    char const* name;
+};
+
+char const* name(void* this){
+    return ((struct Parrot*)this)->name;
+}
+
+
+char const* parrotGreet(void){
+  return "Sto mu gromova!";
+}
+
+char const* parrotMenu(void){
+  return "brazilske orahe";
+}
+
+PTRFUN parrotVTable[3]= {name,parrotGreet,parrotMenu};
+
+void construct(struct Parrot* parrot,const char* name){
+    parrot->name=name;
+    parrot->vtable=parrotVTable;
+}
+
+void* create(const char* name){
+  struct Parrot* parrot =  malloc(sizeof(struct Parrot));
+  construct(parrot,name);
+  return parrot;
+}
+
+size_t size_of(){
+  return sizeof(struct Parrot);
+}
