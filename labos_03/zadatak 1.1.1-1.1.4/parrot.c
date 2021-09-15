@@ -24,12 +24,12 @@ char const* parrotMenu(void){
 
 PTRFUN parrotVTable[3]= {name,parrotGreet,parrotMenu};
 
-void constructParrot(struct Parrot* parrot,char* name){
+void constructParrot(struct Parrot* parrot,const char* name){
     parrot->name=name;
     parrot->vtable=parrotVTable;
 }
 
-void* create(char* name){
+void* create(const char* name){
   struct Parrot* parrot =  malloc(sizeof(struct Parrot));
   constructParrot(parrot,name);
   return parrot;

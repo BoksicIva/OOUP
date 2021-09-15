@@ -24,12 +24,12 @@ char const* tigerMenu(void){
 
 PTRFUN tigerVTable[3]= {name,tigerGreet,tigerMenu};
 
-void constructTiger(struct Tiger* tiger,char* name){
+void constructTiger(struct Tiger* tiger,const char* name){
     tiger->name=name;
     tiger->vtable=tigerVTable;
 }
 
-void* create(char* name){
+void* create(const char* name){
   struct Tiger* tiger =  malloc(sizeof(struct Tiger));
   constructTiger(tiger,name);
   return tiger;
